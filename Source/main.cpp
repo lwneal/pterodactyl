@@ -398,6 +398,7 @@ void runRFSegmentation(string rfModelFilename, string srcFolder)
 {
 	cout << "running random forest segmentation" << endl;
 	
+         // ...
 	system("cd ./segmentation_probabilities; rm *");
 	system("cd ./segmentation_mask; rm *");
 	system("cd ./segmentation_outlines; rm *");
