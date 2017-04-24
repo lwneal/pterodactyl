@@ -155,9 +155,14 @@ public:
 		while(!f.eof())
 		{
 			vector<string> parts = pStringUtils::splitNonEmpty(f.readLine(), ",");
+                           if (parts.size() == 0) {
+                               break;
+                           }
+
 			assert(parts.size() >= 1); // smallest case- no labels for bag -> 1 part for the bag_id
 			
 			int bag_id = pStringUtils::stringToInt(parts[0]);
+                           cout << " Parsing bag id " << bag_id << " out of " << _afmd.size() << endl;
 			assert(bag_id >= 0 && bag_id < _afmd.size());
 			
 			vector<int> labelSet;
@@ -243,6 +248,7 @@ public:
 	static void parseCrossValidationFolds(string filename, vector<pAudioFile_MetaData>& _afmd)
 	{
 		pTextFile f(filename, PFILE_READ);
+                  cout << "parsing cross-validation folds from " << filename << endl;
 		assert(f.readLine() == "bag_id,fold");
 		
 		while(!f.eof())

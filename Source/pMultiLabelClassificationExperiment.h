@@ -20,13 +20,17 @@ namespace multi_label_classification_experiment
 // reads all of the data in a the "self-contained multi-label classification experiment" file format.
 void parseSelfContainedMultiLabelClassificationExperiment(string filename, int& _numClasses, int& _featureDim, vector<string>& _classNames, vector<pExample_MultiLabel>& _examples, string& _cvMode, int& _cvFolds)
 {
+         cout << "Reading Self-Contained Multi-Label Classification Experiment from file " << filename << endl;
 	pTextFile f(filename, PFILE_READ);
 	
 	/// parse the file header ///
 	
 	string comment = f.readLine() + "\n" + f.readLine();
+         cout << "Read comment: " << comment << endl;
 
 	vector<string> numClassesParts = pStringUtils::splitNonEmpty(f.readLine(), "=");
+         cout << "Read first line, got " << numClassesParts.size() << " parts" << endl;
+
 	assert(numClassesParts.size() == 2);
 	assert(pStringUtils::pack(numClassesParts[0]) == "num classes");
 	_numClasses = pStringUtils::stringToInt(numClassesParts[1]);
