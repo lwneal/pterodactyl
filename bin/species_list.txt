@@ -1,0 +1,42 @@
+class_id,code,species
+0,BRCR,Brown Creeper
+1,PAWR,Pacific Wren
+2,PSFL,Pacific-slope Flycatcher
+3,RBNU,Red-breasted Nuthatch
+4,DEJU,Dark-eyed Junco
+5,OSFL,Olive-sided Flycatcher
+6,HETH,Hermit Thrush
+7,CBCH,Chestnut-backed Chickadee
+8,VATH,Varied Thrush
+9,HEWA,Hermit Warbler
+10,SWTH,Swainson's Thrush
+11,HAFL,Hammond's Flycatcher
+12,WETA,Western Tanager
+13,BHGB,Black-headed Grosbeak
+14,GCKI,Golden Crowned Kinglet
+15,WAVI,Warbling Vireo
+16,YRWA,Yellow-rumped Warbler
+17,MGWA,MacGillivray's Warbler
+18,STJA,Stellar's Jay
+19,FROG,Frog species
+20,CONI,Common Nighthawk
+21,_WND,Wind
+22,_STR,Stream Noise
+23,_APL,Airplane
+24,_RAN,Rain
+25,_CRW,Creature Walking
+26,UIDB,Unidentified Bird
+27,GRAJ,Gray Jay
+28,PIWO,Pileated Woodpecker
+29,BTPI,Band-tailed Pigeon
+30,RBSA,Red-breasted Sapsucker
+31,OSPR,Osprey
+32,DOSQ,Douglas Squirrel
+33,EVGR,Evening Groskbeak
+34,NOPO,Northern Pygmy-Owl
+35,BTYW,Black-throated Gray Warbler
+36,AMRO,American Robin
+37,SOGR,Sooty Grouse
+38,_PRT,Person Talking
+39,CHIP,Chipmunk
+40,MTSG,Empty Segment

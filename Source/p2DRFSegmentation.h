@@ -17,23 +17,22 @@ using namespace std;
 class p2DRFSegmentation
 {
 public:
-	const static int featureBoxRadius = 8; // this is the setting for the full 2009 dataset
+	const static int featureBoxRadius = 6; // this is the setting for the full 2009 dataset
 		
 	// appends results to exs, an existing vector of examples
 	static void generateExamplesFromAnnotatedSpectrogram(pImageBytes& annotation, pImageBytes& spectrogram, vector<pExample>& exs)
 	{
 		 
-		// these are the parameters for the full 2009 experiment 
-		float bgSampleProb = 0.01; // fraction of background / negative pixels that will be sampled
-		float positiveSampleProb = 0.1; // fraction of positive / bird sound pixels that will be sampled
-		float negSampleProb = 0.1; // fraction of blue / explicitly negative pixels that will be sampled
+		float bgSampleProb = 0.0001; // fraction of background / negative pixels that will be sampled
+		float positiveSampleProb = 0.01; // fraction of positive / bird sound pixels that will be sampled
+		float negSampleProb = 0.01; // fraction of blue / explicitly negative pixels that will be sampled
 		
 		// TODO: don't use pixels on the edge as training examples?
 		for(int x = 0; x < annotation.w_; ++x)
 		for(int y = 0; y < annotation.h_; ++y)
 		{
 			int label = 0;
-			if( annotation.getPixel(x, y, 0) == 255 && annotation.getPixel(x, y, 1) == 0 && annotation.getPixel(x, y, 2) == 0 )
+			if(annotation.getPixel(x, y, 0) == 255)
 				label = 1;
 			if( annotation.getPixel(x, y, 0) == 0 && annotation.getPixel(x, y, 1) == 0 && annotation.getPixel(x, y, 2) == 255 )
 				label = 2;
@@ -87,6 +86,8 @@ public:
 		fv.push_back(y); // the center "frequency" of the window (in units of bins) 
 		
 		
+                  // TODO: Why does including this feature seem to degrade performance?
+                  /*
 		// this feature was originally added for the ICML 2013 bird challenge to help with segmentation in rain
 		// it seems to work pretty well, so it is being included from now on. to go one step further, this now includes the frame before and after as well
 		for(int j = 0; j < spectrogram.h_; ++j)
@@ -95,6 +96,7 @@ public:
 			//fv.push_back(spectrogram.getPixelF_(x-1, j)); // idea: add frame before/after as well... may dilute the feature
 			//fv.push_back(spectrogram.getPixelF_(x+1, j));
 		}
+                  */
 		
 		
 		// TODO: add more features?

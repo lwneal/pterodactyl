@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include <hash_set.h>
+#include <unordered_set>
 #include <vector>
 #include <algorithm>
 #include "pVectorUtils.h"
@@ -27,7 +27,7 @@ public:
 		int startIndex = 0;
 		
 		vector<int> traversal;
-		hash_set<int> inSet;
+		unordered_set<int> inSet;
 		traversal.push_back(startIndex);
 		inSet.insert(startIndex);
 		
@@ -70,7 +70,7 @@ public:
 		int startIndex = 0;
 		
 		vector<int> traversal;
-		hash_set<int> inSet;
+		unordered_set<int> inSet;
 		traversal.push_back(startIndex);
 		inSet.insert(startIndex);
 		

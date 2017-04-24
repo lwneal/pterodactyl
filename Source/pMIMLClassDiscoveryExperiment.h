@@ -14,6 +14,7 @@
 #include "pBagDistance.h"
 #include <pthread.h>
 #include <map>
+#include <unordered_set>
 
 using namespace std;
 
@@ -421,7 +422,7 @@ public:
 				if( mimlExs[currBag].instances_.size() == 0 ) continue; // if the bag has 0 instances, skip it
 				
 				vector< vector<float> > coveredInstancesInThisBag;
-				hash_set<int> coveredInstancesInThisBagSet;
+				unordered_set<int> coveredInstancesInThisBagSet;
 				
 				// find the k "best" instances in the bag. the bag's score for selection
 				// is the sum of the distances from those best k instances to their nearest covered neighbor
@@ -756,7 +757,7 @@ public:
 	{
 		// start by selecting a random non-empty bag
 		vector<int> selectedBags;
-		hash_set<int> selectedBagSet;
+		unordered_set<int> selectedBagSet;
 		vector<int> nonEmptyBags;
 		for(int i = 0; i < mimlExs.size(); ++i)
 			if( mimlExs[i].instances_.size() != 0 ) 
@@ -805,7 +806,7 @@ public:
 	{
 		// start by selecting a non-empty bag
 		vector<int> selectedBags;
-		hash_set<int> selectedBagSet;
+		unordered_set<int> selectedBagSet;
 		vector<int> nonEmptyBags;
 		for(int i = 0; i < mimlExs.size(); ++i)
 			if( mimlExs[i].instances_.size() != 0 ) 
@@ -875,7 +876,7 @@ public:
 	{
 		// start by selecting a random non-empty bag
 		vector<int> selectedBags;
-		hash_set<int> selectedBagSet;
+		unordered_set<int> selectedBagSet;
 		vector< vector<float> > coveredInstances;
 		
 		vector<int> nonEmptyBags;
@@ -902,7 +903,7 @@ public:
 				if( mimlExs[j].instances_.size() == 0 ) continue; // if the bag has 0 instances, skip it
 	
 				vector< vector<float> > coveredInstancesInThisBag;
-				hash_set<int> coveredInstancesInThisBagSet;
+				unordered_set<int> coveredInstancesInThisBagSet;
 				
 				// find the k "best" instances in the bag. the bag's score for selection
 				// is the sum of the distances from those best k instances to their nearest covered neighbor
@@ -1052,7 +1053,7 @@ public:
 				if( mimlExs[j].instances_.size() == 0 ) continue; // if the bag has 0 instances, skip it
 				
 				vector< vector<float> > coveredInstancesInThisBag;
-				hash_set<int> coveredInstancesInThisBagSet;
+				unordered_set<int> coveredInstancesInThisBagSet;
 			
 				// find the k "best" instances in the bag. the bag's score for selection
 				// is the sum of the distances from those best k instances to their nearest covered neighbor

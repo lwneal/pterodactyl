@@ -310,7 +310,8 @@ void makeSpectrogramsAndApplyNoiseFilter_multithread(string srcWavsFolder, strin
 	pFileUtils::getFilesInDirectory(srcWavsFolder, sourceFilenames);
 
 
-	int numThreads = sysconf( _SC_NPROCESSORS_ONLN ); // set the number of threads to the number of processors
+         // Use one thread only, to fix segfault
+	int numThreads = 1;
 	cout << "# threads = " << numThreads << endl;
 	
 	vector<pthread_t> threads(numThreads);
@@ -385,12 +386,14 @@ void trainRFSegmentation(string segmentationExamplesFolder, string spectrogramsF
 	
 	const int numClasses = 2;
 	bool storeHistogramInLeaf = true;
-	//const int maxTreeDepth = 20;
-	const int maxTreeDepth = 1000000; // inifinity for all purposes
+	const int maxTreeDepth = 20;
+	//const int maxTreeDepth = 1000000; // inifinity for all purposes
 	
 	pRandomForest_pthread rf;
 	//rf.train(pParameters::segmentationNumRandomForestTrees, numClasses, exs, storeHistogramInLeaf, maxTreeDepth);
-	rf.train_multithread(pParameters::segmentationNumRandomForestTrees, numClasses, exs, storeHistogramInLeaf, maxTreeDepth);
+         const int numTrees = 30;
+         cout << "Training " << numTrees << " trees of max depth " << maxTreeDepth << endl;
+	rf.train_multithread(numTrees, numClasses, exs, storeHistogramInLeaf, maxTreeDepth);
 	rf.save(outputRFModelFilename);
 }
 
@@ -398,6 +401,7 @@ void runRFSegmentation(string rfModelFilename, string srcFolder)
 {
 	cout << "running random forest segmentation" << endl;
 	
+         // ...
 	system("cd ./segmentation_probabilities; rm *");
 	system("cd ./segmentation_mask; rm *");
 	system("cd ./segmentation_outlines; rm *");
