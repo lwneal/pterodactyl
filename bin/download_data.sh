@@ -2,11 +2,11 @@
 set -e
 
 # Download and extract the data
-#wget -nc lwneal.com/hja_sarah_664.tar.gz
-#tar xzvf hja_sarah_664.tar.gz
+wget -nc lwneal.com/hja_sarah_664.tar.gz
+tar xzvf hja_sarah_664.tar.gz --skip-old-files
 #
-#wget -nc lwneal.com/hja_lawrence_625.tar.gz
-#tar xzvf hja_lawrence_625.tar.gz -C hja_lawrence_625
+wget -nc lwneal.com/hja_lawrence_625.tar.gz
+tar xzvf hja_lawrence_625.tar.gz -C hja_lawrence_625 --skip-old-files
 
 
 # Generate spectrograms
