@@ -86,6 +86,8 @@ public:
 		fv.push_back(y); // the center "frequency" of the window (in units of bins) 
 		
 		
+                  // TODO: Why does including this feature seem to degrade performance?
+                  /*
 		// this feature was originally added for the ICML 2013 bird challenge to help with segmentation in rain
 		// it seems to work pretty well, so it is being included from now on. to go one step further, this now includes the frame before and after as well
 		for(int j = 0; j < spectrogram.h_; ++j)
@@ -94,6 +96,7 @@ public:
 			//fv.push_back(spectrogram.getPixelF_(x-1, j)); // idea: add frame before/after as well... may dilute the feature
 			//fv.push_back(spectrogram.getPixelF_(x+1, j));
 		}
+                  */
 		
 		
 		// TODO: add more features?
