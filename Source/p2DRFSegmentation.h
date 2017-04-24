@@ -33,7 +33,7 @@ public:
 		for(int y = 0; y < annotation.h_; ++y)
 		{
 			int label = 0;
-			if( annotation.getPixel(x, y, 0) == 255 && annotation.getPixel(x, y, 1) == 0 && annotation.getPixel(x, y, 2) == 0 )
+			if(annotation.getPixel(x, y, 0) == 255)
 				label = 1;
 			if( annotation.getPixel(x, y, 0) == 0 && annotation.getPixel(x, y, 1) == 0 && annotation.getPixel(x, y, 2) == 255 )
 				label = 2;
