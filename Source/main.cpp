@@ -310,7 +310,8 @@ void makeSpectrogramsAndApplyNoiseFilter_multithread(string srcWavsFolder, strin
 	pFileUtils::getFilesInDirectory(srcWavsFolder, sourceFilenames);
 
 
-	int numThreads = sysconf( _SC_NPROCESSORS_ONLN ); // set the number of threads to the number of processors
+         // Use one thread only, to fix segfault
+	int numThreads = 1;
 	cout << "# threads = " << numThreads << endl;
 	
 	vector<pthread_t> threads(numThreads);
