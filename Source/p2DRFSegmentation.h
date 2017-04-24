@@ -17,16 +17,15 @@ using namespace std;
 class p2DRFSegmentation
 {
 public:
-	const static int featureBoxRadius = 8; // this is the setting for the full 2009 dataset
+	const static int featureBoxRadius = 6; // this is the setting for the full 2009 dataset
 		
 	// appends results to exs, an existing vector of examples
 	static void generateExamplesFromAnnotatedSpectrogram(pImageBytes& annotation, pImageBytes& spectrogram, vector<pExample>& exs)
 	{
 		 
-		// these are the parameters for the full 2009 experiment 
-		float bgSampleProb = 0.01; // fraction of background / negative pixels that will be sampled
-		float positiveSampleProb = 0.1; // fraction of positive / bird sound pixels that will be sampled
-		float negSampleProb = 0.1; // fraction of blue / explicitly negative pixels that will be sampled
+		float bgSampleProb = 0.0001; // fraction of background / negative pixels that will be sampled
+		float positiveSampleProb = 0.01; // fraction of positive / bird sound pixels that will be sampled
+		float negSampleProb = 0.01; // fraction of blue / explicitly negative pixels that will be sampled
 		
 		// TODO: don't use pixels on the edge as training examples?
 		for(int x = 0; x < annotation.w_; ++x)

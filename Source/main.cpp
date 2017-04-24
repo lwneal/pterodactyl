@@ -386,12 +386,14 @@ void trainRFSegmentation(string segmentationExamplesFolder, string spectrogramsF
 	
 	const int numClasses = 2;
 	bool storeHistogramInLeaf = true;
-	//const int maxTreeDepth = 20;
-	const int maxTreeDepth = 1000000; // inifinity for all purposes
+	const int maxTreeDepth = 20;
+	//const int maxTreeDepth = 1000000; // inifinity for all purposes
 	
 	pRandomForest_pthread rf;
 	//rf.train(pParameters::segmentationNumRandomForestTrees, numClasses, exs, storeHistogramInLeaf, maxTreeDepth);
-	rf.train_multithread(pParameters::segmentationNumRandomForestTrees, numClasses, exs, storeHistogramInLeaf, maxTreeDepth);
+         const int numTrees = 30;
+         cout << "Training " << numTrees << " trees of max depth " << maxTreeDepth << endl;
+	rf.train_multithread(numTrees, numClasses, exs, storeHistogramInLeaf, maxTreeDepth);
 	rf.save(outputRFModelFilename);
 }
 
