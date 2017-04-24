@@ -1,41 +1,42 @@
-1	BRCR - Brown Creeper
-2	PAWR - Pacific Wren
-3	PSFL - Pacific-slope Flycatcher
-4	RBNU - Red-breasted Nuthatch
-5	DEJU - Dark-eyed Junco
-6	OSFL - Olive-sided Flycatcher
-7	HETH - Hermit Thrush
-8	CBCH - Chestnut-backed Chickadee
-9	VATH - Varied Thrush
-10	HEWA - Hermit Warbler
-11	SWTH - Swainson's Thrush
-12	HAFL - Hammond's Flycatcher
-13	WETA - Western Tanager
-14	BHGB - Black-headed Grosbeak
-15	GCKI - Golden Crowned Kinglet
-16	WAVI - Warbling Vireo
-17	YRWA - Yellow-rumped Warbler
-18	MGWA - MacGillivray's Warbler
-19	STJA - Stellar's Jay
-20	FROG - Frog species
-21	CONI - Common Nighthawk
-22	_WND - Wind
-23	_STR - Stream Noise
-24	_APL - Airplane
-25	_RAN - Rain
-26	_CRW - Creature Walking
-27	UIDB - Unidentified Bird
-28	GRAJ - Gray Jay
-29	PIWO - Pileated Woodpecker
-30	BTPI - Band-tailed Pigeon
-31	RBSA - Red-breasted Sapsucker
-32	OSPR - Osprey
-33	DOSQ - Douglas Squirrel
-34	EVGR - Evening Groskbeak
-35	NOPO - Northern Pygmy-Owl
-36	BTYW - Black-throated Gray Warbler
-37	AMRO - American Robin
-38	SOGR - Sooty Grouse
-39	_PRT - Person Talking
-40	CHIP - Chipmunk
-41	MTSG - Empty Segment
+class_id,code,species
+0,BRCR,Brown Creeper
+1,PAWR,Pacific Wren
+2,PSFL,Pacific-slope Flycatcher
+3,RBNU,Red-breasted Nuthatch
+4,DEJU,Dark-eyed Junco
+5,OSFL,Olive-sided Flycatcher
+6,HETH,Hermit Thrush
+7,CBCH,Chestnut-backed Chickadee
+8,VATH,Varied Thrush
+9,HEWA,Hermit Warbler
+10,SWTH,Swainson's Thrush
+11,HAFL,Hammond's Flycatcher
+12,WETA,Western Tanager
+13,BHGB,Black-headed Grosbeak
+14,GCKI,Golden Crowned Kinglet
+15,WAVI,Warbling Vireo
+16,YRWA,Yellow-rumped Warbler
+17,MGWA,MacGillivray's Warbler
+18,STJA,Stellar's Jay
+19,FROG,Frog species
+20,CONI,Common Nighthawk
+21,_WND,Wind
+22,_STR,Stream Noise
+23,_APL,Airplane
+24,_RAN,Rain
+25,_CRW,Creature Walking
+26,UIDB,Unidentified Bird
+27,GRAJ,Gray Jay
+28,PIWO,Pileated Woodpecker
+29,BTPI,Band-tailed Pigeon
+30,RBSA,Red-breasted Sapsucker
+31,OSPR,Osprey
+32,DOSQ,Douglas Squirrel
+33,EVGR,Evening Groskbeak
+34,NOPO,Northern Pygmy-Owl
+35,BTYW,Black-throated Gray Warbler
+36,AMRO,American Robin
+37,SOGR,Sooty Grouse
+38,_PRT,Person Talking
+39,CHIP,Chipmunk
+40,MTSG,Empty Segment
