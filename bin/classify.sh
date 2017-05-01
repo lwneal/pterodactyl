@@ -6,7 +6,7 @@
 ./pterodactyl -spectrogram+noisefilter_multithread src_wavs spectrograms filtered_spectrograms >/dev/null
 
 # Segment spectrograms
-#./pterodactyl -2drfseg_run_multithread filtered_spectrograms
+./pterodactyl -2drfseg_run filtered_spectrograms
 
 COUNT=`ls segmentation_mask/ | wc`
 #echo "Produced $COUNT segmentation masks"
