@@ -346,6 +346,8 @@ void multiLabelClassifierExperiment_cvModeDispatch(
 	vector<pExample_MultiLabel>& allExamples,
 	TClassifierParams params)
 {
+         cout << "Running multiLabelClassifierExperiment_cvModeDispatch on dataset of size "
+             << allExamples.size() << endl;
 	if( cvMode == "k-fold" )
 		multiLabelClassifierExperiment_kFold<TClassifier, TClassifierParams>(datasetName, classifierName, repetitionNum, _resultsSummary, numClasses, featureDim, cvFolds, allExamples, params);
 			

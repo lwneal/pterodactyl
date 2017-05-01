@@ -179,6 +179,7 @@ pImageBytes pFileIO_BMP::read(string filename)
 	bool needsFlipVertical = false;
 	
 	
+         cout << "Attempting to load file " << filename << endl;
 	ifstream fp(filename.c_str(), ios::in | ios::binary);
 	assert(fp.good() && "readBMP error: file not found");
 	
